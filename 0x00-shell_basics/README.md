@@ -23,3 +23,5 @@ Deletes the directory my_first_directory that is in the /tmp directory.
 Changes the working directory to the previous one.
 ## 11-lists
 Lists all files in the current directory and the parent of the working directory and the /boot directory including hidden files in long format.
+## 12-file_type
+ prints the type of the file named iamafile in /tmp directory.
