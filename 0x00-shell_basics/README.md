@@ -8,4 +8,6 @@ Changes the working directory to the home directory.
 ## 3-listfiles
 Displays current directory contents in a long format.
 ## 4-listmorefiles
-Display current directory contents, including hidden files in a long format.
+Displays current directory contents, including hidden files in a long format.
+## 5-listfilesdigitonly
+Displays current directory contents, including hidden files in a long format with user and group IDs displayed numerically.
