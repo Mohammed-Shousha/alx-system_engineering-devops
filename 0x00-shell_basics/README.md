@@ -21,3 +21,5 @@ Deletes the file betty.
 Deletes the directory my_first_directory that is in the /tmp directory.
 ## 10-back
 Changes the working directory to the previous one.
+## 11-lists
+Lists all files in the current directory and the parent of the working directory and the /boot directory including hidden files in long format.
