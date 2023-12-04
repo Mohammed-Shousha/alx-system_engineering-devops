@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+root_dir="/var/www/html"
+custom_error_page_dir="$root_dir/custom_404.html"
+
+mkdir -p "$root_dir"
+
+echo "Hello World!" > /usr/share/nginx/html/index.html
+echo "Ceci n'est pas une page" > "$custom_error_page_dir"
+
+nginx_config="server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    add_header X-Served-By $(hostname);
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 \$scheme://www.google.com;
+    }
+
+    error_page 404 /custom_404.html;
+    location = /custom_404.html {
+      root $root_dir;
+      internal;
+    }
+}"
+
+echo "$nginx_config" > /etc/nginx/sites-available/default
+
+apt-get update -y
+apt-get install nginx -y
+
+service nginx start
+nginx -s reload
