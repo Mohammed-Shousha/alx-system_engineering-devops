@@ -36,7 +36,7 @@ defaults
 frontend mshousha-tech-frontend
 	bind *:80
 	mode http
-	bind *:443 ssl crt /etc/haproxy/certs/www.mshousha.tech.pem
+	bind *:443 ssl crt /etc/letsencrypt/live/www.mshousha.tech/fullchain.pem
 	redirect scheme https if !{ ssl_fc }
 	default_backend mshousha-tech-backend
 
